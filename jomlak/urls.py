@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from .views import FirstView, SalView
+from posts.views import MakePost, SubmitPost
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^search/', FirstView.as_view()),
+    url(r'^sal/$', SalView.as_view()),
+    url(r'^form/$', MakePost.as_view()),
+    url(r'^post/', SubmitPost.as_view()),
 ]
