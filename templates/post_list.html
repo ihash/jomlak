@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+        {% for post in posts %}
+            <div>
+                {{ post.text }}  {{ post.likes }} <a href="{{ post.get_url }}">Like!</a>
+            </div>
+        {% endfor %}
+</body>
+</html>

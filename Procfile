@@ -1,0 +1,1 @@
+web: gunicorn jomlak.wsgi --log-file -

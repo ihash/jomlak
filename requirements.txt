@@ -1,0 +1,7 @@
+django==1.8.3
+whitenoise
+django-toolbelt
+pillow
+djrill
+django-cors-headers
+python-telegram-bot

@@ -10,5 +10,9 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
     # user = models.ForeignKey(to=User)
 
+    def __str__(self):
+        return self.text
 
-    # quote = models.CharField('public quote', max_length=160)
+    @property
+    def get_url(self):
+        return '/like/{}/'.format(self.id)

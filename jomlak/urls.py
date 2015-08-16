@@ -16,11 +16,16 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from .views import FirstView, SalView
-from posts.views import MakePost, SubmitPost
+from django.views.decorators.csrf import csrf_exempt
+
+from posts.views import MakePost, SubmitPost, PostListView, LikePostView, Bot
 
 urlpatterns = [
     url(r'^search/', FirstView.as_view()),
     url(r'^sal/$', SalView.as_view()),
     url(r'^form/$', MakePost.as_view()),
     url(r'^post/', SubmitPost.as_view()),
+    url(r'^postlist/$', PostListView.as_view()),
+    url(r'^like/(?P<asha>\d+)/$', LikePostView.as_view()),
+    url(r'^bot/$', csrf_exempt(Bot.as_view())),
 ]

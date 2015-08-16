@@ -6,8 +6,9 @@
 </head>
 <body>
 
-    <form action="http://127.0.0.1:8000/post/" method="post">
+    <form action="/post/" method="get">
         <input type="text" name="post_text" />
+        {% csrf_token %}
         <button type="submit">Submit</button>
     </form>
 
